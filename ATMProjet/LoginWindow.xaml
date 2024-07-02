@@ -8,11 +8,12 @@
         Title="LoginWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="19*"/>
-            <RowDefinition Height="198*"/>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="266*"/>
+            <RowDefinition Height="59*"/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="LightGray" Width="800" Height="450" Margin="0,0,0,-16" Grid.RowSpan="2"/>
-        <Rectangle Fill="White" Width="876" Height="89" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-3,0,0,0" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+        <Rectangle Fill="LightGray" Margin="0,0,0,-16" Grid.RowSpan="3"/>
+        <Rectangle Fill="White" Width="876" Height="89" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-3,0,0,0" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -22,19 +23,21 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <TextBlock Foreground="Black" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,10,0,0" Grid.RowSpan="2" FontFamily="Segoe Print"> <!-- Utilisation de la police Segoe Print -->
+        <TextBlock Foreground="Black" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,10,0,0" FontFamily="Segoe Print" Height="85" Width="373"> 
             <Run Text="ATM"/><Run Language="fr-fr" Text=" - Services"/>
         </TextBlock>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,83,0,0" Grid.Row="1">
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="230" Width="360">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Image Source="https://pnghq.com/wp-content/uploads/careers-connection-icon-png-see-through-background.png" Width="50" Height="50"/>
                 <TextBlock Foreground="Black" FontSize="24" Width="132"><Run Language="fr-fr" Text="  "/><Run Text="Connexion"/></TextBlock>
             </StackPanel>
-            <TextBlock Foreground="White" FontSize="16" Margin="0,30,0,10" RenderTransformOrigin="0.493,0.57"><Run Language="fr-fr" Text=" "/><Run Text=" "/><Run Text="       "/><Run Text="     "/><Run Text="CODE PIN"/></TextBlock>
-            <PasswordBox Name="PinBox" Width="200" Height="30"/>
+            <TextBlock Foreground="Black" FontSize="16" Margin="0,20,0,10">Numéro d'utilisateur</TextBlock>
+            <TextBox Name="UserNumberBox" Width="200" Height="30" Margin="0,0,0,20"/>
+            <TextBlock Foreground="Black" FontSize="16" Margin="0,20,0,10">Code PIN</TextBlock>
+            <PasswordBox x:Name="PinBox" Width="200" Height="30" RenderTransformOrigin="0.525,-0.424"/>
             <Button Content="Valider" Width="100" Height="30" Margin="0,20,0,0" Click="LoginButton_Click"/>
-            <TextBlock x:Name="StatusTextBlock" Text="" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Segoe Print"/>
+            <TextBlock x:Name="StatusTextBlock" Text="" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Segoe Print" Margin="0,20,0,0"/>
         </StackPanel>
-
     </Grid>
 </Window>
