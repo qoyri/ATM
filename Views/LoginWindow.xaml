@@ -1,0 +1,36 @@
+﻿<Window x:Class="ATMProjet.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoginWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="198*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="LightGray" Grid.RowSpan="2"/>
+        <Rectangle Fill="White" Width="800" Height="89" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.065"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBlock Foreground="Black" FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,10,0,0" Grid.RowSpan="2" FontFamily="Segoe Print">
+            <Run Text="ATM"/><Run Language="fr-fr" Text=" - Services"/>
+        </TextBlock>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,83,0,0" Grid.Row="1">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Source="https://pnghq.com/wp-content/uploads/careers-connection-icon-png-see-through-background.png" Width="50" Height="50"/>
+                <TextBlock Foreground="Black" FontSize="24" Width="132"><Run Language="fr-fr" Text="  "/><Run Text="Connexion"/></TextBlock>
+            </StackPanel>
+            <TextBox Width="200" Height="30" Text="{Binding CardNumber, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Foreground="Black" FontSize="16" Margin="0,30,0,10" RenderTransformOrigin="0.493,0.57"><Run Language="fr-fr" Text="CODE PIN"/></TextBlock>
+            <PasswordBox Width="200" Height="30" PasswordChanged="OnPasswordChanged" />
+            <Button Content="Valider" Width="100" Height="30" Margin="0,20,0,0" Command="{Binding LoginCommand}" />
+            <TextBlock Text="{Binding LoginStatus}" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        </StackPanel>
+    </Grid>
+</Window>
